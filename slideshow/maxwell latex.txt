@@ -1,0 +1,11 @@
+\newline
+\nabla \cdot \vec{\mathbf{E}}=4 \pi \rho_e \newline
+\nabla \cdot \vec{\mathbf{B}}=4 \pi \rho_m \newline
+\nabla \times \vec{\mathbf{E}}=-\frac{1}{c} \frac{\partial \vec{\mathbf{B}}}{\partial t}-\frac{4 \pi}{c}\vec{\mathbf{J}}_m\newline
+\nabla \times \vec{\mathbf{B}}=\frac{1}{c} \frac{\partial \vec{\mathbf{E}}}{\partial t}+\frac{4 \pi}{c}\vec{\mathbf{J}}_e \newline
+
+
+sample trajectory:
+m = 1e15*1.78266184e-27
+r0_default = np.array([-10.7, 1.5, 1])
+v0_default = c*(0.01)*np.array([1.0,-0.6,-1.5])

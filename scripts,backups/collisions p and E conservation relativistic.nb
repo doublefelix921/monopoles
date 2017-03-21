@@ -1,0 +1,116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3196,        106]
+NotebookOptionsPosition[      2882,         90]
+NotebookOutlinePosition[      3224,        105]
+CellTagsIndexPosition[      3181,        102]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"v1i", "/", "c"}], ")"}], "^", "2"}]}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"-", "0.5"}], ")"}]}], "*", "m1", "*", 
+       RowBox[{"v1i", "^", "2"}]}], "==", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"v1f", "/", "c"}], ")"}], "^", "2"}]}], ")"}], "^", 
+         RowBox[{"(", 
+          RowBox[{"-", "0.5"}], ")"}]}], "*", "m1", "*", 
+        RowBox[{"v1f", "^", "2"}]}], "+", 
+       RowBox[{"m2", "*", 
+        RowBox[{"v2f", "^", "2"}]}]}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"v1i", "/", "c"}], ")"}], "^", "2"}]}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"-", "0.5"}], ")"}]}], "*", "m1", "*", "v1"}], "==", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"v1f", "/", "c"}], ")"}], "^", "2"}]}], ")"}], "^", 
+         RowBox[{"(", 
+          RowBox[{"-", "0.5"}], ")"}]}], "*", "m1", "*", "v1f"}], "+", 
+       RowBox[{"m2", "*", "v2f"}]}]}]}], "}"}], ",", "v1f", ",", "v2f"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6161736997092094`*^9, 3.6161737542283278`*^9}, {
+  3.61617382490637*^9, 3.616173865274679*^9}, {3.6161739018707724`*^9, 
+  3.6161739363437443`*^9}, {3.616174332852423*^9, 3.616174344380083*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "bdomv"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Warning: \[NoBreak]\\!\\(v2f\\)\[NoBreak] is not a valid \
+domain specification. Mathematica is assuming it is a variable to eliminate. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/Solve\\\", ButtonNote -> \
+\\\"Solve::bdomv\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6161739136894484`*^9, 3.61617393853187*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 515},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1761, 53, 112, "Input"],
+Cell[2343, 77, 523, 10, 39, "Message"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,76 @@
+4/26/15:
+-Worked on it 2 days in a row, maybe about 6-7 hours. Finished the runge kutta for the most part (added in the actual k's and the 4th and 5th order formulas), created an error estimate to control the stepsize, and documented it very well in the program summary. The documentation is not entirely done: the velocity one, I believe, is done (but should be looked over) and the position one needs work. I should do that next week.
+
+3/23/15:
+-Read about adaptive timestep method, replaced in new picture for total vector field with disk fixed, checked that the disk regions are right (cuts off at 3kpc, and total field cuts off at 1kpc), recolored the r=1,3,5,20 indicators and added r=3. 
+
+3/21/15:
+-Installing spyder worked, with py2.7 it was all good.
+-Plugged in the fixed disk field unit vector and replaced the old vector field plot image
+-made the functions for getting current time less stupid (used strftime) and fixed a bug caused by me naming a variable "time" while using the time module.
+
+3/19/15:
+-Trouble with finding "grapher.py" despite it being in the current directory of my monopoles file. Investigation reveals that python thinks that the location of the current file is c\users\felix. os.path.abspath("__file__"), run directly after imports, reveals this. I'm using pyzo and python 3.4 and will uninstall python now to install py2.7 instead.
+
+3/17/15:
+-Reviewed relativity stuff, to see if my math was wrong. I had seen the solution for constant acceleration motion in GR and wondered if it applied to this. It seems not to; that meant constant acceleration in the MCRF frame and everything is in the galactic rest frame. We instead have, approximately, constant force motion, for which there seems to be no exact solution.
+
+-Learned mathematica stuff in the process of trying again to solve my ODEs. Started a mathematia physics environment (it seems to make sense to do with mathematica's symbolic features). 
+
+3/08/15:
+-Went to Grandma's today. Didn't get much done. But I fixed the strange bug where it seemed like the function was calculating the diskfield as a float and then returning "None". Turns out there was actually just a case for which the function had no return statement. Derp.
+
+3/01/15:
+-Got the DURF grant. Working on the project again. Today, I looked back at the project to see what I had been doing. I was trying to convert it all to CGS but I suspect it's more effort than it's worth. If it's really necessary, I can convert it once everything is calculated. I looked up a bit about how CGS works to make sure. It seems that the trick is that there is an invisible unit-holding factor of 1 in Gaussian unit equations that prevents you from converting equations the normal way. It comes from a new unit of charge which is basically a factor of c=299792458 off of the coulomb. So even though changing equations is weird, I believe that changing units is nothing unusual.(?) I should check on that.
+
+-Found another bug. The unit vector for my disk field was wrong. Somehow I had <sin(theta+i),-cos(theta+i> but when I just re-derived it I got something else (see word doc). I haven't fixed it yet because I'm moving my bfield expression into separate functions for different fields and it's giving me errors. So for the sake of making sure that what I get after this is the same as what I got before i haven't changed it yet.
+
+Problem: diskfield returns "nonetype"
+
+1/14/15:
+FINALLY finished the grayscale cross section. And checked everything, the disk field is perfect. Also checked halo and x field. They are all qualitatively good. 
+
+1/13/15:
+Sloan says the field is "small" outside of 20kpc. But in Farrar it says it's exactly 0 for r>20kpc. So..he was wrong about that.
+Worked on plotting an xz cross section of the disk field, with color proportional to grayness (black at max magnitude), and blue if exactly zero. Really buggy.
+
+1/8/15:
+installed python 2.7 on desktop, and configured it (with python xy). after debugging, found out that certain areas with 5<r<20 didn't have regions assigned. Debug process: made a debug function telling me which region i'm in and how many regions i'm in (should always be 1). reminded myself which regions were where, and for fast future reference, photoshopped my disk field png to include region numbers. ready to debug now.
+
+1/1/15:
+Finished fixing the region-finding algorithm. Read sloan and prepared to talk to farrar.
+
+1/2/15: met with Farrar. Here were my notes:
+for farrar:
+-They got monopoles revolving in the galaxy, so they must not go straight through. what did they use as their velocity to start with? because that's the problem for me. Last time I ran (admittedly with a skewed field but still not too far off), even with a start at 300 m/s in negative z, the trajectory was a straight line bc the monopole just went downward. and they're supposed to have really big velocities, right? according to how they're accelerated, by some-paper-or-other that i sent to farrar? i'm talking relativistic. what's the contradiction there? how did they get their initial velocity? Is it feasible after all, or did they make a mistake, or use an unrealistic starting v?
+
+1. summary of sloan findings:
+-he did the same thing (with an arbitrary starting position and velocity) but also with gravity. gravity makes a difference, CERTAINLY for more massive MPs, in his results.
+-From earth: he started at -8.5kpc=x and let it run with either no starting velocity or the speed of the sun, ~250km/s.
+-Entering the galaxy: he started at 2.2x the speed of the sun relative to the galaxy. they were ejected quickly from the galaxy but bounced back in from gravity for times as large as a few thousand Myrs. 
+-High spd entering the galaxy: he started at beta= .01 (still less than the beta predicted by thingie)
+-in general, his monopoles seem more perturbed by the GMF than mine, possibly because of an error on my part. 
+-monopoles which enter the galaxy also tend to stay around radii larger than that of the earth, making them less likely to show up
+-but, I note, they only tried a small variety of directions, and only a handful of velocities, while the possibilities are way way more than that. I didn't see any evidence that what they had was reliably the same results you would get with other velocities, and there was very little discussion of the likelihood of monopoles hitting the earth after entering the GMF.
+-After doing another error check, I'm going to try to reproduce his results. I will then look back at the reasoning behind my belief that the velocities were so high to start with (for velocities like these, his results weren't perturbed either) and see if it was justified. relativity?? what are these supposed velocities relative TO? 
+
+12/30/14: 
+fixed vector plot (due to confusion with meshgrid and how quiver interprets coordinates). Found a bug in xfield, wherein the direction in z was wrong for all negative z. tried to explain a seeming oddity in the halo field, in which vectors were nonzero for negative z and zero for positive z (for certain x, y values). This turned out to be okay.
+
+realized that there was no bhat for the center of the bfield in the halo component, fixed that. Began fixing incorrect algorithm stating which region the particle was in. 
+
+12/29/14: 
+added bfield vector plot to graph (lots of trouble with np.meshgrid). didn't finish.
+
+12/28/14: 
+finished algorithm, changed algorithm to rk4 in program (made functions for bfield and acc). modified program to include graph.
+
+12/27/14: 
+worked out rk4 algorithm for backwards-tracing, in part. began modifying program for single-run.
+
+12/26?/14:
+read terry sloan's slideshow about mpoles
+
+
+
+

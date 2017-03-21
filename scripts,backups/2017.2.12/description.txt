@@ -1,0 +1,3 @@
+just got everything clean, renamed functions and many variables to follow PEP, took out unnecessary code, etc etc.
+
+Now I will modify batchrunner to take in a mass from cmd line, and then just run with ALL variables. This is saved BEFORE that modification.

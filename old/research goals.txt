@@ -1,0 +1,48 @@
+To keep a head on as to WHY I am doing what I'm doing and not lose track of the role of the things I do in the bigger picture, here is the structure:
+
+======LITTLE TASKS======
+-
+
+-Wait... in griffiths, it seemed like motion with a constant force was solved for. What's the deal? Maybe I messed it up.
+
+-Debugging the program. Trying to plot mag(disk field) at z=0 with a color map. Found that mag was 0 almost everywhere? investigate. then finish colormap.
+
+-Next check: the numbers seem small. What's the deal? Are the units right? Shouldn't it be about 0.3 microgauss (the size of those b1 things etc), at LEAST at its max?
+
+-read each description in the paper and check qualitative properties. and check why the span of disk is what it is, and should it be independent of z, and does the length scale with z, uhhh... anything else?
+
+-plan: add adaptive timestep, ONLY if it turns out that initial velocities must be really high. why did terry sloan's paper disagree?
+
+-it seems like the clockwiseness of my graph disagrees with theirs...
+
+reproduce sloan results to see if we agree (he was wrong or i was wrong.)
+
+create a tag for 1. entering the <1kpc sphere, or 2. staying in the same striated field region for a long time, making it coherent.
+
+long run questions to answer:
+-get a qualitative feel of the path of a monopole given its starting position and velocity. maybe for a few different masses too. 
+-are there loopholes in the parker bound, or can we improve it, given the GmF specifics that we now have? Is there reason to do this? AKA is it the best upper bound that we have (are there better ones that are DEFINITE and do not rely on potentially false assumptions?)
+-what's the shift in the KE of monopoles starting from z=0 and exiting, with different masses and velocities, if they make a difference.
+-review wick argument for the energy of relic monopoles and sort through its validity. present it to farrar, would probably be good. does it include the expansion of the universe (which cools the monopoles)?
+-what is the current necessary in the galaxy to form the bfield?
+
+-sloan said his field went on past 20kpc. is that right? I must have messed up...
+
+
+
+
+=======OVERALL/BIGTHINK GOALS=======
+Use the farrar GMF to understand as much as possible about magnetic monopoles, their sources, how they would move within our galaxy, etc.
+
+I. If a monopole enters the galaxy, what's the chance that it'll hit the earth? Map all of the possible conditions of the earth-hitting monopoles to their positions and velocities on the 20kpc sphere. 
+	1. Is the magnetic field even important? Does it change their velocities significantly at all? AKA do we even need this computational business? 
+		-if computation is necessary: numerical recipes book.
+		-maybe find potential to see the scale of energy changes
+		-graph B field to see the direction of the force everywhere, will help a lot in general when using it. 
+	2. find errors. stepsize error, computer rounding error. human error in building the program – test for cases in which you know something about the outcome.
+	3. check for other monopole charges
+II. Is it likely for monopoles to be bound in the galaxy?
+III. Later: Making an actual paper stuff
+
+
+-no GMF for < 1kpc, not because there IS none but because we don't know it. I plan to mark any monopole passing through that region, and take those results with less validity.  also add "how long did it spend there" and "what was the change in velocity from just that region".

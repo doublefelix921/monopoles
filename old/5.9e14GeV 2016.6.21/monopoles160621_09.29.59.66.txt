@@ -1,0 +1,60 @@
+=====STARTING CONDITIONS FOR RUN ===== 
+v_0 (kpc/s):
+[-5.6413233824517318e-13, -4.4745641449550011e-12, -2.072684286409482e-12]
+mag(v0):
+4.96346549635e-12
+mag(v0)/c
+0.510875243141
+E0 (kg*kpc^2/s^2):
+1e-34
+THETA_0 (rads):
+2.00158564126
+PHI_0 (rads):
+4.58697529873
+q_b
+1.06655979e-28
+m (kg)
+1.78266184e-12
+dt (s)
+50000000000.0
+distance to halt (kpc)
+40.0
+===FINAL CONDITIONS=== 
+vel (kpc/s):
+[ -5.60871741e-13  -4.47210275e-12  -2.07586216e-12]
+mag(vel) (kpc/s)
+4.96220554343e-12
+mag(vel)/c
+0.510745559806
+pos (kpc)
+[ -6.33684981  17.21813709   7.98761542]
+mag(pos) (kpc)
+20.0105449815
+theta_f (rads)
+1.16018456911
+phi_f (rads)
+1.92344536215
+distance tracked (kpc)
+19.103546852
+distance from start (kpc)
+19.1035458427
+Kinetic Energy (kg*kpc^2/s^2)
+1.63153284129e+14
+maxvelocity (kpc/s)
+4.96346549635e-12
+maxvelocity/c
+0.510875243141
+arclength_in_rho1kpc_region (kpc)
+0.0
+time after t=0 start (s):
+-3.85e+12
+iterations
+77
+real runtime (real s)
+0.055999994278
+final acc (kpc/s/s)
+[ -7.64196802e-29   1.24713381e-28   1.98615593e-28]
+
+
+exit status
+True

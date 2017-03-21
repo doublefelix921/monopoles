@@ -1,0 +1,64 @@
+ria info:
+numpy version 1.4.0
+python version 2.6.6 final,0
+
+howdy access, then to ria, then to ursa:
+ssh -p 4426 feist@howdy.physics.nyu.edu
+ssh -p 44326 ria
+ssh ursa
+username: feist
+password: hostias44Ho
+(ria has a small home space so save large files to storage2/feist on ria)
+
+my research folder location:
+"cygdrive/c/Users/Felix/Google Drive/Research"
+
+
+
+BASH COMMANDS:
+COPY FROM RESEARCH FOLDER TO RIA, FROM Felix@Felix-PC:
+scp -P 4426 "cygdrive/c/Users/Felix/Google Drive/Research/final.py" feist@howdy.physics.nyu.edu:/home/users/feist/test/
+ssh -p 4426 feist@howdy.physics.nyu.edu
+scp -P 44326 final.py ria:/home/feist
+
+
+SHOW PROCESS LIST FOR MY STUFF ONLY, W DETAILED INFO
+ps -u
+
+KILL PROCESS WITH PID 1125
+kill 1125
+
+EXIT SSH
+exit
+
+run a script with bash:
+#!/bin/bash    ##(place of interpreter)
+cd /home/feist/
+mpiexec python helloworld.py
+
+run, even if you log off, in parallel:
+nohup sh finalqueue.sh &
+
+run using the queue/cancel a job
+qsub ./finalqueue.sh
+qdel ((jobid))
+
+
+list current processes:
+qstat
+
+VIM COMMANDS:
+copy, in command mode (vim):
+go to start of selection
+v: visual mode
+x: cut, y: copy (yank), p:paste
+
+dd cut line
+p paste
+
+questions:
+why do my filenames have question marks at the end?
+
+info:
+parallel jobs use more than one node. #cores <= #monopoles being tracked.
+for now try using farrargroup, with 2 nodes & 8 cores each.

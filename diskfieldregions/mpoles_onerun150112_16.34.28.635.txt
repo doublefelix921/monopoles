@@ -1,0 +1,55 @@
+
+=====STARTING CONDITIONS FOR RUN 0.00.00.0 ===== vel_0:
+[ 0.  0.  0.]
+mag(vel_0):
+0.0
+mag(vel_0)/c
+0.0
+THETA_0
+0.0
+PHI_0
+0.0
+q_b
+1.06655979e-28
+m
+1.78266184e-14
+dt
+1e+19
+distance to halt
+40.0
+===FINAL CONDITIONS=== vel:
+[ 0.  0.  0.]
+mag(vel)
+0.0
+mag(vel)/c
+0.0
+pos
+[ 100.  100.  100.]
+mag(pos)
+173.205080757
+theta_f
+0.955316618125
+phi_f
+0.785398163397
+distance tracked
+0.0
+distance from start
+178.247720883
+Kinetic Energy NONRELATIVISTIC
+0.0
+maxvelocity
+0.0
+maxvelocity/c
+0.0
+time
+-1e+19
+iterations
+1
+real runtime
+0.00399780273438
+final acc
+[ 0.  0.  0.]
+
+
+exit status
+True

@@ -1,0 +1,4 @@
+this backup was made before completely revamping the program so that it doesn't use .txt files to communicate between files.
+
+unfortunately, monopoles and getB were both slightly modified before I thought to back them up, so there will probably be some name errors if it is run off the bat. Nothing huge...
+

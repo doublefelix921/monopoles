@@ -1,0 +1,154 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4373,        144]
+NotebookOptionsPosition[      4057,        128]
+NotebookOutlinePosition[      4402,        143]
+CellTagsIndexPosition[      4359,        140]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"rp", "==", 
+    RowBox[{"r", "-", 
+     RowBox[{"abs", 
+      RowBox[{
+       RowBox[{"(", "z", ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"r", "+", 
+         RowBox[{"cot", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"rp", "/", "rxc"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"theta", "-", 
+              RowBox[{"Pi", "/", "2"}]}], ")"}]}], ")"}]}]}], ")"}]}]}]}]}], 
+   ",", "rp"}], "]"}]], "Input",
+ CellChangeTimes->{{3.613928329208499*^9, 3.613928369899826*^9}, {
+  3.6139284229228587`*^9, 3.613928426069039*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"rp", "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "cot"}], " ", "\[Pi]", " ", "r"}], "-", 
+        RowBox[{"2", " ", "r", " ", "rxc"}], "+", 
+        RowBox[{"2", " ", "cot", " ", "r", " ", "theta"}], "-", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"cot", " ", "\[Pi]", " ", "r"}], "+", 
+             RowBox[{"2", " ", "r", " ", "rxc"}], "-", 
+             RowBox[{"2", " ", "cot", " ", "r", " ", "theta"}]}], ")"}], "2"],
+           "-", 
+          RowBox[{"4", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "cot"}], " ", "\[Pi]"}], "+", 
+             RowBox[{"2", " ", "cot", " ", "theta"}]}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "2"}], " ", 
+              SuperscriptBox["r", "2"], " ", "rxc"}], "+", 
+             RowBox[{"2", " ", "abs", " ", "rxc", " ", "z"}]}], ")"}]}]}]]}], 
+       ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "cot"}], " ", "\[Pi]"}], "+", 
+          RowBox[{"2", " ", "cot", " ", "theta"}]}], ")"}]}], ")"}]}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rp", "\[Rule]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "cot"}], " ", "\[Pi]", " ", "r"}], "-", 
+        RowBox[{"2", " ", "r", " ", "rxc"}], "+", 
+        RowBox[{"2", " ", "cot", " ", "r", " ", "theta"}], "+", 
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"cot", " ", "\[Pi]", " ", "r"}], "+", 
+             RowBox[{"2", " ", "r", " ", "rxc"}], "-", 
+             RowBox[{"2", " ", "cot", " ", "r", " ", "theta"}]}], ")"}], "2"],
+           "-", 
+          RowBox[{"4", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "cot"}], " ", "\[Pi]"}], "+", 
+             RowBox[{"2", " ", "cot", " ", "theta"}]}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "2"}], " ", 
+              SuperscriptBox["r", "2"], " ", "rxc"}], "+", 
+             RowBox[{"2", " ", "abs", " ", "rxc", " ", "z"}]}], ")"}]}]}]]}], 
+       ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "cot"}], " ", "\[Pi]"}], "+", 
+          RowBox[{"2", " ", "cot", " ", "theta"}]}], ")"}]}], ")"}]}]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.613928427055095*^9}]
+}, Open  ]]
+},
+WindowSize->{707, 545},
+WindowMargins->{{175, Automatic}, {Automatic, 43}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 656, 20, 31, "Input"],
+Cell[1238, 44, 2803, 81, 241, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,205 @@
+jan 31 2017
+yesterday and today, maybe also on the 29th, I added proper error handling. Before, everything was giving just "Exception" and if there was an UNINTENDED exception, the trace wouldn't show properly. The code was also ugly because they were handled by checking the exception text. Now trajectory.py has custom exceptions.
+
+jan 29 2017
+preparing to optimize the way that my files communicate.
+
+in monopoles.py,
+
+if __name__=="__main__":
+	create a settings variable.
+	put settings to some defaults.
+
+otherwise, settings will not exist, and will just be created when the run function is called from another program.
+
+changelog:
+-added everything to "Settings{}" dictionary.
+-eliminated minrhobool (not necessary bc we have arclength_in_rho1kpc_region)
+-eliminated RunTrajectoryWrapper: not necessary bc filesystem will be eliminated.
+-completely removed file writing
+
+
+jan 3 2017
+
+Glennys wrote "Having a clear agenda is surly essential to making progress in this mode. be realistic.  Why don’t you write down what is needed to be done* and send that as an email, and then we can Skype about it.  
+* especialy list what should be simulated, and the concrete work needed preparatory to submitting the sims.  "
+
+It is a good idea to plan. Here are the overall goals:
+
+1. We want to find the "spectrum" of energy losses of mpoles traveling through our galaxy. Variables are mass, initial velocity, initial angle of approach on the r=200kpc sphere*. That makes 1 + 3 + 2 = 6 degrees of freedom. Maybe some of these are redundant, I will check after getting some results. 
+
+I already have a working program for distributing points evenly on a sphere. It will be used for the directions of approach and angle of approach on the 200kpc sphere.
+
+*We talked previously about starting monopoles far away (100-200kpc) from the galactic center because the energy gain from ~50kpc to infinity is not negligible. This should be computationally feasible before March, especially with an adaptive timestep method. I have one partially programmed.
+
+2. In a paper I read (Wick, 2002) a typical energy for relic monopoles was estimated. The argument did not include expansion of space, which reduces their energies over time. I will redo the argument and also use the typical energy losses/gains from the simulations for a better estimate. It will be interesting if this energy is insufficient to reach the earth - then monopoles could only be detected from certain areas on the earth, where the field permits.
+
+Here are the steps I plan to take:
+1. The code needs a bit of adaptation: (2 weeks)
+	-Adapt the code to run with all d.o.f. variable - right now only some are variable. Also implement the extension of the Bfield past r = 20kpc which we discussed by email: \vec{B}(r,theta,phi) = \vec{B}(r=20kpc,theta,phi) ( 20/r)^3.
+	-Adapt it to run in parallel, I know of a simple way to do this. 
+
+2. I'd like to do a bit more error checking; it's better to find a mistake now and not need to redo anything. I will compare again with Sloan's results & review my previous error checks which I documented. I will also do some order of magnitude consistency checks. (1 week)
+
+3. Begin simulations on ria/ursa. During this time I will do more consistency checks with preliminary results, and I will think about goal #2. If the simulations are slow, I will finish the adaptive timestep method. It may not be necessary. 
+
+============
+From Lofti's email:
+2 classes of monopoles: GUT heavy, and relativistic. He searched for GUT heavy in IceCube. 
+
+In 1km^3 ice detectors, GUT heavy monopoles "can't produce cherenkov light in the ice", while relativistic ones emit 4700 times more than a muon.
+
+Other way to search is by the "rubakov-callan effect", which assumes the catalysis of the proton decay. 
+
+
+theta_pos, phi_pos, theta_vel, phi_vel, E0
+m?
+
+a=qB/m
+
+this will not be independent of mass or charge.
+
+-problem: field is defined at z values greater than 20, so 20kpc sphere is not enough. if these are really not negligible, then we have a problem. 
+mag(get_B(5, 5, z))=
+z	|B|
+10	3.2e-11
+20	1.3e-11
+30	7.6e-12
+40	5.0e-12
+50	3.57e-12
+90	1.33e-12
+1000	1.36e-14
+
+-python multiple try things so that any single one can fail.
+
+new questions:
+It seems like monopoles would have to come from space. 
+1. where could we feasibly put a particle detector to try to find monopoles?
+
+
+Look up:
+Rigidity
+
+Zfg - energy limit of crate because of a decay at a certain energy 
+
+Ask farrar about schools in things I'm interested in!
+
+is it a trivial result - what is the starting velocity we expect?
+
+find energy loss at different velocities 10-1000km/s starting vel in particular.
+
+try to reproduce any specific reults he claims
+
+double check the 1MeV thing - is the relativistic thing ok?
+
+typical gravitational acceleration of a 
+
+12/15 conclusions:
+-I estimated the deflection, based on the principle that F*dz ~= (1/10)*(1/2)*mv0^2.
+In other words, the z-deflection is non-negligible only when the work done in the z direction is comparable (one-tenth) to the starting kinetic energy. It turns out that the work done in the z-direction is less than a factor of 2 away from this number when I use the velocity at which it is barely deflected and a small deflection size.
+
+-Sloan doesn't agree with me. He says that monopoles don't enter the galaxy at masses less than 1e17GeV. There are two problems with this:
+1. I entered the galaxy from the most difficult point, with m=1e13GeV
+
+tasks given on 12/10 for the weekend
+-read landau's mechanics, re: scattering theory? and angular momentum conservation?
+-do the theory on paper. for my numbers, is it weird to get such low forces?
+-go over sloan's paper. are his results inconsistent?
+
+for certain masses, i don't need to check.
+
+For VERY heavy monopoles, they are so rare that the average time in between single earth collisions is thousands of years. I can just ignore these.
+
+for monopoles over a certain energy they will just pass right through completely unaffected. I can test this manually by hitting them into the regions of strongest magnetic field and seeing at what point they stop having straight trajectories.
+
+I want to find a reasonable range of masses and energies to probe.
+
+from: http://pdg.lbl.gov/2013/reviews/rpp2012-rev-mag-monopole-searches.pdf
+"Without a GMF one would expect monopoles to have typical velocities of the order of (1e-3) c, comparable to the virial velocity in the galaxy." - I read about the virial theorem. It makes claims about the average kinetic energy of a particle. What is the reason to believe that a monopole with such a huge mass would have an average kinetic energy?
+
+The same source also has an expression for the typical velocity which I would like to understand before using. (eq 8)
+
+The Parker bound puts a limit on the flux of monopoles, also listed in that source (eq 9)
+
+Grand unification magnetic monopoles have masses of the order 1e15GeV 
+src: http://moedal.web.cern.ch/content/search-magnetic-monopole 
+
+
+======UNANSWERED QUESTIONS======
+
+
+======ANSWERED QUESTIONS======
+Q1: After having graphed the field, it was apparent that there are quite a few abrupt transitions, for example between the two xfield regions. My fledgling intuition says that some of the transitions of this nature wouldn't be physically possible. Obviously you're aware of this too, I was just curious how approximate you consider the model to be.
+
+A1: Right, but this is a 1st approximation.  There are random fields that will smooth it on small scales anyway.  But one must take care to check that smoothing the transitions doesn’t change results like deflections. 
+
+Q2: what's the deal with that one trig thing? Both sloan and I couldn't figure out how you got it. equation 9. 
+
+A2: Farrar says it has to do with flux conservation. I didn't get it. she also says it's right and lots of people ask about it.
+
+Q3: (TLDR: In the xfield, won't B=0 at z=0 matter since the earth has z=0?) We spoke about the slightly better-fit x-field, which was found after the release of the paper, that I am not using. Based on how you described it, it would be defined for the z=0 plane. I currently have my z=0 xfield set to zero, because of the expression for the unit vector I have:
+\frac{1}{\sqrt{z^{2}+(r-r_{p})^{2}}} <x \frac{r-r_{p}}{r},y \frac{r-r_{p}}{r},z}>
+...which gets funky at z=0, as it was presumably not intended for that. 
+However, for monopoles starting at low speeds, the trajectory may be more sensitive to this area than others. Thus the better-fit xfield, which probably has different behavior mostly just around z=0, might actually make a difference. What do you think?
+
+A3:What we did to check if its a problem for UHECR deflections (its not), is to just multiply the field formula by a function that vanishes at |z| = 0, like 1 - exp{|z|/z*), and try several values of z*, e.g., 10 pc.  
+
+
+
+=======GENERAL KNOWLEDGE / NOTES=======
+
+-Cherenkov radiation comes from sonic boom effect, when particles move through a material faster than light. It can come in pulses of radiation or a constant glow.
+
+-A steradian is the ratio of some surface area on a sphere to the area r^2, just like the radian is the ratio of an arc to the length 2pir.
+
+-!!!SEE Kolb, Turner "The Early Unverse" for AMANDA II ref. on energy gained by magnetic monopole through galaxy. Might just be good in general, really.
+
+-GZK limit: bounds the energy of distant cosmic rays because of energy loss to the CMB to < 5e19eV, or 5e10GeV. Heavier nuclei which may surpass the limit (!!!!???). Particles have been found with E ~= 10 times the limit. Possible theories why include unknkown local sources, ultra high energy neutrinos which hit an antineutrino to produce a local high energy proton,  and just experimental error (which seems likely by wikipedia). According to Wick 2003 the mean free path for a monopole to scatter off of the cmb is bigger than the size of the universe[3]
+
+-flux units: 1/(cm^2 s sr). 
+
+-monopole charge is 10 orders of magnitude greater in A*m than the coulomb charge. The force between two unit magnetic charges over the force between two unit electric charges is mu_0*ep_0*q_b^2 / q_e^2 ~= 5000. Magnetic force is about 5000 times stronger.
+
+-size of a water molecule: ~3 angstroms.
+
+   ==FROM PDG REVIEW==
+
+-light monopoles are possible. heavy monopoles are predicted by GUTs but those are of course unconfirmed. It seems likely that monopoles will thus be heavy but they may also be light.
+
+-the dirac quant cond seems to leave room for multiples of quark charges. Not sure but so it seems. 
+
+   ==FROM LOFTI's EMAIL==
+2 classes of monopoles: GUT heavy, and relativistic. He searched for GUT heavy in IceCube. 
+
+In 1km^3 ice detectors, GUT heavy monopoles "can't produce cherenkov light in the ice", while relativistic ones emit 4700 times more than a muon.
+
+Other way to search is by the "rubakov-callan effect", which assumes the catalysis of the proton decay. 
+
+   ==FROM LOFTIS AMANDAII PAPER==
+-AMANDA II neutrino detector detects cherenkov radiation produced by monopoles hitting a big block of ice ~1km length, over 1 year of data.
+
+-2 flux limits: 3.8e-17, 8.8e-16 in 1/(cm^2 s sr), for monopoles moving near c and near v/c=.76, respectvely. May also be based on whether the monopoles came from below the horizon or from the atmosphere.
+
+-masses range from 1e5 to 1e17 GeV
+
+-charge is based on e, the charge of proton.
+
+-during their lifetime (lifetime of the universe?), monopoles should have KE about 1e15GeV. 
+
+-Parker bound is 1e-15 1/(cm^2 s sr)
+
+-experimental flux is order 1e-16 1/(cm^2 s sr) so only very large detectors have a chance.
+
+-Gives a formula for amount of cherenkov photons emitted per path length and photo wavelength for some index of refraction (eq 2)
+
+-Has a plot of average monopole energy loss in the earth's core, mantle, ice, and air per unit distance for different gammas. 
+
+   ==FROM WICK 2003==
+-Parker bound is only for monopoles that do not catalyze baryon decay. For ones that do, the bound is apparently SO low that the monopoles are not observable (but it remains a possibility that they DO catalyze baryon decay). Only monopoles which don't are considered in this paper.
+-dE/dx in air may be too small to notice luminesence from air, only a small portion of models allow this[2]
+-Mean free path of monopole is > size of universe [3, bottom note] so no GZK?
+-Equation 2.4 puts a nice bound on monopole mass but ONLY for nonrelativistic monopoles. As is said below it, no such bound exists for relativistic. 
+-It is estimated [6] that monopoles with mass less than 1e14GeV will be traveling at relativistic speeds.
+-Monopoles thru matter: strong interactions are likely to be negligible [6]
+
+What information is there on the flux?
