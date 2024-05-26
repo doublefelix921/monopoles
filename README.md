@@ -1,1 +1,1 @@
-"# monopoles" 
+This is a bulk simulator for the trajectories of magnetic monopoles through the milky way galaxy, based on the model of the milky way magnetic field in Jansson, Farrar (2012). The program calculates trajectories of a statistical number of monopoles entering the milky way galaxy from various angles. The code is relevant to the question: If monopoles exist, why haven't we seen them hit earth? Could it be that the milky way's magnetic field plays a role in deterring monopoles in deep space from reaching earth?
